@@ -9,3 +9,38 @@
 body {
   background-color: #ae91c0;
 }
+
+h1 {
+  position: relative;
+  left: 270px;
+  top: 20px;
+}
+
+h2 {
+  position: relative;
+  left: 230px;
+  top: 25px;
+}
+/* Style the send button */
+.button {
+  display: flex;
+  position: relative;
+  left: 384px;
+  top: 72px;
+  padding: 12px;
+}
+
+.button:hover {
+  background-color: #ffffff;
+  color: rgb(204, 196, 196);
+}
+/* lägg till att när man hover ska det bli till send istället */
+
+.boxT {
+  display: flex;
+  position: relative;
+  left: 220px;
+  padding-left: 20px;
+  border-radius: 6px;
+  top: 90px;
+}
