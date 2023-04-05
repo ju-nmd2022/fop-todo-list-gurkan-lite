@@ -1,4 +1,4 @@
-@import url("https://fonts.google.com/specimen/Italiana?query=Italiana&preview.text=Clear&preview.text_type=custom");
+@import url("https://fonts.googleapis.com/css2?family=Italiana&display=swap");
 
 * {
   font-family: "Italiana";
@@ -14,12 +14,14 @@ h1 {
   position: relative;
   left: 270px;
   top: 20px;
+  font-size: 80px;
 }
 
 h2 {
   position: relative;
   left: 230px;
   top: 25px;
+  font-size: 60px;
 }
 /* Style the send button */
 .button {
