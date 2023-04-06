@@ -41,6 +41,7 @@ h2 {
   border-radius: 6px;
   top: 65px;
   scale: 1.5;
+  stroke: none;
 }
 
 .trash {
@@ -49,7 +50,11 @@ h2 {
 }
 
 .todo {
+  font-size: 30px;
   position: relative;
   left: 650px;
-  top: 165px;
+  top: 105px;
+}
+.checked {
+  text-decoration: line-through;
 }

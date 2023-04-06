@@ -4,7 +4,7 @@ const todoInput = document.getElementById("boxT");
 const todosListEl = document.getElementById("list-todo");
 
 //array - vars
-let todos = JSON.parse(localStorage.getItem("todos")) || [];
+let todos = JSON.parse(localStorage.getItem("todos"));
 
 // 1st render
 renderTodos();
@@ -68,12 +68,14 @@ todosListEl.addEventListener("click", (event) => {
   //target action
   const action = target.dataset.action;
 
-  action === "check" && checkTodo(todoId);
-  action === "delete" && deleteTodo(todoId);
-
-  console.log(todoId, action);
+  if (action === "check") {
+    checkTodo(todoId);
+  } else if (action === "delete") {
+    deleteTodo(todoId);
+    renderTodos(); // re-render todos after deletion
+    localStorage.setItem("todos", JSON.stringify(todos)); // save changes to local storage
+  }
 });
-
 // check a todo, first created as an if statement but then made cleaner
 function checkTodo(todoId) {
   todos = todos.map((todo, index) => ({
@@ -83,13 +85,16 @@ function checkTodo(todoId) {
 
   renderTodos();
   localStorage.setItem("todos", JSON.stringify(todos));
+  const todoEl = document.getElementById(todoId);
+  const todoTextEl = todoEl.querySelector("p");
+  todoTextEl.classList.toggle("checked");
 }
 
 // delete Todo
 function deleteTodo(todoId) {
-  todos = todos.filter((todo, index) => index !== todoId);
-
-  //re-render
-  renderTodos();
-  localStorage.setItem("todos", JSON.stringify(todos));
+  todos.splice(todoId, 1);
 }
+
+//re-render
+renderTodos();
+localStorage.setItem("todos", JSON.stringify(todos));
