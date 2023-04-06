@@ -12,14 +12,14 @@ body {
 
 h1 {
   position: relative;
-  left: 270px;
+  left: 670px;
   top: 20px;
   font-size: 80px;
 }
 
 h2 {
   position: relative;
-  left: 230px;
+  left: 530px;
   top: 25px;
   font-size: 60px;
 }
@@ -27,22 +27,29 @@ h2 {
 .button {
   display: flex;
   position: relative;
-  left: 384px;
-  top: 72px;
+  left: 860px;
+  top: 38px;
   padding: 12px;
+  scale: 1;
 }
-
-.button:hover {
-  background-color: #ffffff;
-  color: rgb(204, 196, 196);
-}
-/* lägg till att när man hover ska det bli till send istället */
 
 .boxT {
   display: flex;
   position: relative;
-  left: 220px;
+  left: 690px;
   padding-left: 20px;
   border-radius: 6px;
-  top: 90px;
+  top: 65px;
+  scale: 1.5;
+}
+
+.trash {
+  position: relative;
+  left: 120px;
+}
+
+.todo {
+  position: relative;
+  left: 650px;
+  top: 165px;
 }
