@@ -1,3 +1,5 @@
+//the following code was adapted from https://www.youtube.com/watch?v=i1pxPSl9ZHc&t=225s&ab_channel=CodeExplained
+
 //DOM - selected elements
 const form = document.getElementById("todoform");
 const todoInput = document.getElementById("boxT");
@@ -31,7 +33,7 @@ function saveTodo() {
   } else {
     todos.push({
       value: todoValue,
-      checked: false,
+      checked: false, // add checked property with default value
     });
     todoInput.value = "";
     console.log(todos);
@@ -46,17 +48,16 @@ function renderTodos() {
   // Render todos
   todos.forEach((todo, index) => {
     todosListEl.innerHTML += `
-    <div class="todo" id=${index}> 
-    <p class="">${todo.value}</p>
-      <i class="trash" data-action="delete">✖️</i>
-      <i class="${todo.checked ? "checked" : ""}" data-action="check">✔️</i>
-      </div>
-    `;
+      <div class="todo" id=${index}> 
+      <p class="${todo.checked ? "checked-todo" : ""}">${todo.value}</p>
+        <i class="trash" data-action="delete">✖️</i>
+        <i class="${todo.checked ? "checked" : ""}" data-action="check">✔️</i>
+        </div>
+      `;
   });
 }
-//lägg in senare så man liksom strycker över en grej om man gjort det, 26min i vid
 
-// Click event listener for all todos
+// Click event listener for all todos - the following code and checkTodo was adapetd from chat gtp
 todosListEl.addEventListener("click", (event) => {
   const target = event.target;
   const parentElement = target.parentNode;
@@ -80,14 +81,14 @@ todosListEl.addEventListener("click", (event) => {
 function checkTodo(todoId) {
   todos = todos.map((todo, index) => ({
     ...todo, // will copy all the objects dvs value, just written shorter
-    checked: index === todoId ? !todo.checked : todo.checked, // this is made not to repet myself to much
+    checked: index == todoId ? !todo.checked : todo.checked, // this is made not to repet myself to much
   }));
 
   renderTodos();
   localStorage.setItem("todos", JSON.stringify(todos));
+
+  // Select the <div> element of the clicked todo item
   const todoEl = document.getElementById(todoId);
-  const todoTextEl = todoEl.querySelector("p");
-  todoTextEl.classList.toggle("checked");
 }
 
 // delete Todo
