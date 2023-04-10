@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Italiana&display=swap");
+
+* {
+  font-family: "Italiana";
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: #b797cb;
+}
+
+/* clear */
+h1 {
+  position: relative;
+  left: 650px;
+  top: 20px;
+  font-size: 80px;
+}
+/* For a clear mind */
+h2 {
+  position: relative;
+  left: 530px;
+  top: 25px;
+  font-size: 60px;
+}
+/* send button */
+.button {
+  display: flex;
+  position: relative;
+  left: 705px;
+  top: -31px;
+  padding: 12px;
+  scale: 0.12;
+  font-size: 120px;
+}
+
+.boxT {
+  display: flex;
+  position: relative;
+  left: 650px;
+  padding-left: 20px;
+  border-radius: 6px;
+  top: 65px;
+  scale: 1;
+  stroke: none;
+}
+
+.trash {
+  position: relative;
+  left: 120px;
+}
+
+.todo {
+  font-size: 30px;
+  position: relative;
+  left: 650px;
+  top: 105px;
+}
+.checked-todo {
+  text-decoration: line-through;
+}
